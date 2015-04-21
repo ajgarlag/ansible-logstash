@@ -1,0 +1,35 @@
+---
+# tasks file for ajgarlag.logstash
+- name: adding logstash repository GPG key
+  apt_key:
+    url: https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+
+- name: adding logstash repository
+  apt_repository:
+    repo: deb http://packages.elasticsearch.org/logstash/{{ ajgarlag_logstash_minor_version }}/debian stable main
+    update_cache: yes
+
+- name: checking if JAVA is installed
+  command: java -version
+  ignore_errors: yes
+  register: java_check
+  changed_when: no
+
+- name: installing JAVA package
+  apt:
+    pkg: "{{ ajgarlag_logstash_java_package }}"
+    state: latest
+  when: java_check != 0
+
+- name: installing logstash packages
+  apt:
+    pkg: "{{ item }}"
+    state: latest
+  with_items:
+    - logstash
+    - logstash-contrib
+
+- name: setting logstash autostart option
+  service:
+    name: logstash
+    enabled: "{{ ajgarlag_logstash_autostart }}"
