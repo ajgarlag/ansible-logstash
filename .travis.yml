@@ -1,6 +1,7 @@
 ---
 language: python
 python: "2.7"
+sudo: required
 
 env:
   - ROLE=ajgarlag.logstash
@@ -37,4 +38,4 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Test that logstash is running
-  - service logstash status
+  - sudo service logstash status
