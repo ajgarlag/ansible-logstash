@@ -29,7 +29,9 @@
     - logstash
     - logstash-contrib
 
-- name: setting logstash autostart option
+- name: setting logstash to autostart
   service:
     name: logstash
-    enabled: "{{ ajgarlag_logstash_autostart }}"
+    enabled: yes
+  notify:
+    - restart logstash
