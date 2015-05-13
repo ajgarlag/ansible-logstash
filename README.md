@@ -10,6 +10,8 @@ Role Variables
 
 * **ajgarlag_logstash_minor_version**: Minor version to configure the logstash repository (defaults to `1.4`).
 * **ajgarlag_logstash_java_package**: Name of the package to install a JAVA JRE environment (defaults to `openjdk-7-jre-headless`).
+* **ajgarlag_logstash_configuration_files**: Array of files to copy to logstash configuration folder (defaults to `[]`).
+* **ajgarlag_logstash_configuration_templates**: Array of templates to copy to logstash configuration folder (defaults to `[]`).
 
 Dependencies
 ------------

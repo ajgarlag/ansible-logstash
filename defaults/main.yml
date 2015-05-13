@@ -3,3 +3,7 @@
 ajgarlag_logstash_minor_version: 1.4
 
 ajgarlag_logstash_java_package: openjdk-7-jre-headless
+
+ajgarlag_logstash_configuration_files: []
+
+ajgarlag_logstash_configuration_templates: []

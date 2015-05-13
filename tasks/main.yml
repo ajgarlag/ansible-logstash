@@ -35,3 +35,25 @@
     enabled: yes
   notify:
     - restart logstash
+
+- name: copying logstash configuration files
+  copy:
+    src: "{{ item }}"
+    dest: /etc/logstash/conf.d/{{ item | basename }}
+    owner: root
+    group: root
+    mode: 0664
+  with_items: ajgarlag_logstash_configuration_files
+  notify:
+    - restart logstash
+
+- name: copying logstash configuration templates
+  template:
+    src: "{{ item }}"
+    dest: /etc/logstash/conf.d/{{ item | basename }}
+    owner: root
+    group: root
+    mode: 0664
+  with_items: ajgarlag_logstash_configuration_templates
+  notify:
+    - restart logstash
