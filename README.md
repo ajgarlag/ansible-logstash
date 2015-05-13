@@ -13,10 +13,6 @@ Role Variables
 * **ajgarlag_logstash_configuration_files**: Array of files to copy to logstash configuration folder (defaults to `[]`).
 * **ajgarlag_logstash_configuration_templates**: Array of templates to copy to logstash configuration folder (defaults to `[]`).
 
-Dependencies
-------------
-
-* **ajgarlag.bootstrap**: Ansible role to perform some basic setup to execute other ansible roles.
 
 Example Playbook
 ----------------
