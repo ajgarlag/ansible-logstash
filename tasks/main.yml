@@ -57,3 +57,10 @@
   with_items: ajgarlag_logstash_configuration_templates
   notify:
     - restart logstash
+
+- name: setting logstash default options
+  lineinfile:
+    dest: /etc/default/logstash
+    line: '{{ item.key }}={{item.value}}'
+    regexp: '^#?{{ item.key }}='
+  with_dict: ajgarlag_logstash_default_options

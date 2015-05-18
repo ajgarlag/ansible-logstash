@@ -12,6 +12,7 @@ Role Variables
 * **ajgarlag_logstash_java_package**: Name of the package to install a JAVA JRE environment (defaults to `openjdk-7-jre-headless`).
 * **ajgarlag_logstash_configuration_files**: Array of files to copy to logstash configuration folder (defaults to `[]`).
 * **ajgarlag_logstash_configuration_templates**: Array of templates to copy to logstash configuration folder (defaults to `[]`).
+* **ajgarlag_logstash_default_options**: Hash of options to set in */etc/default/logstash* (defaults to `{}`).
 
 
 Example Playbook
