@@ -22,7 +22,6 @@ Example Playbook
 - hosts: all
   roles:
     - role: ajgarlag.logstash
-      ajgarlag_logstash_minor_version: 1.5
 ```
 
 
