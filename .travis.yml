@@ -36,3 +36,6 @@ script:
 
   # Test that logstash is running
   - sudo service logstash status
+
+  # Test that the plugin is installed
+  - /opt/logstash/bin/plugin list | grep logstash-input-relp
